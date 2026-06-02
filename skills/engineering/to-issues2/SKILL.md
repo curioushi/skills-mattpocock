@@ -1,7 +1,7 @@
------
-
-## name: to-issues2
+---
+name: to-issues2
 description: 用 tracer-bullet（曳光弹）垂直切片把一份计划、规格或 PRD 拆成项目 issue tracker 上「独立可领取」的 issue。在原版基础上加了两点让改动更易 review：每个 issue 的非机械 diff 控制在 400 行内、实现完成后随 PR 附一份审查指南。当用户想把计划拆成 issue、创建实现工单、分解工作，或想控制单次改动规模、降低审查成本时使用。
+---
 
 # To Issues（审查友好版）
 
