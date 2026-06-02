@@ -15,6 +15,12 @@ description: 用 tracer-bullet（曳光弹）垂直切片把一份计划、规�
 
 issue tracker 与 triage 标签的约定应当已经提供给你——若没有，先运行 `/setup-matt-pocock-skills`。
 
+### 1.1 输出语言规则
+
+与用户交互时沿用用户使用的语言；但凡需要**落盘为 Markdown 文件**的内容，必须用中文撰写，关键术语保留英文。这里的落盘 Markdown 包括 local markdown issue tracker 下的 `.md` issue、PRD 拆解文件、实现说明、审查指南，以及任何为了本次拆 issue 工作写入仓库的 Markdown 记录。
+
+关键术语包括但不限于：issue、PRD、tracer bullet、vertical slice、HITL、AFK、diff、schema、API、UI、test、agent、PR、review、triage label、issue tracker、acceptance criteria。标题、正文、验收标准和审查指南都应使用中文句子，但这些术语按英文保留。
+
 ### 2. 探查 codebase（可选）
 
 如果还没探查过 codebase，就探查一下，以了解代码的当前状态。
@@ -55,7 +61,9 @@ issue tracker 与 triage 标签的约定应当已经提供给你——若没有�
 
 ### 5. 创建 issue
 
-对每个被批准的切片，发布一个新 issue 到 issue tracker（在 GitHub 上用 `gh issue create`）。使用下面的 issue 正文模板。
+对每个被批准的切片，发布一个新 issue 到 issue tracker。GitHub issue tracker 用 `gh issue create`；local markdown issue tracker 按 `docs/agents/issue-tracker.md` 约定写入 `.md` 文件。使用下面的 issue 正文模板。
+
+如果 issue tracker 是 local markdown，所有落盘的 `.md` 文件都必须遵守「输出语言规则」：中文正文，关键术语保留英文。不要把模板字段翻译回英文，也不要混用英文段落来描述实现任务。
 
 这些 issue 被视为已可交给 AFK agent，因此发布时打上正确的 triage 标签（除非另有指示）。
 
