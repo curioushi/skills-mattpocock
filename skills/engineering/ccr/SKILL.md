@@ -5,7 +5,7 @@ disable-model-invocation: true
 allowed-tools: Bash
 ---
 
-Run a local Claude code review for the current repo changes, wait for the result, then relay the review in this chat in Chinese.
+Run a local Claude code review for the current repo changes, wait for the result, then relay the review and give your own assessment in this chat in Chinese.
 
 ## Levels
 
@@ -27,4 +27,5 @@ claude -p '用中文审查此仓库当前未提交的代码变更。使用 git s
 ```
 
 Completion criterion: the Claude command exits and its stdout/stderr have been captured.
-3. Restate Claude's review result to the user in Chinese in the current chat. Preserve the finding order and severity. If the command failed, report the command failure in Chinese instead of inventing review findings. Completion criterion: the user can read the review result without opening another terminal.
+3. Restate Claude's review result to the user in Chinese in the current chat. Preserve the finding order and severity. If the command failed, report the command failure in Chinese instead of inventing review findings.
+4. Immediately evaluate Claude's review in Chinese: state which findings you agree with, disagree with, or are neutral on, with brief reasons. Base this on the local diff and code context; do not invent extra findings unless they are needed to explain your assessment. Completion criterion: the user can read both Claude's review and your assessment without asking a follow-up.
